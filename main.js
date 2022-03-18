@@ -21,6 +21,11 @@ function start() {
     stampaNumeri(arrayNumeri, numeroNumeri);
     setTimeout(clearNumber, 5000);
     setTimeout(askNumber, 6000, arrayNumeri);
+    genera.classList.add("no-pointer");
+    setTimeout(pointer, 6000);
+}
+function pointer() {
+    genera.classList.remove("no-pointer");
 }
 function generateRandomNumber(min, max) {
     const range = (max - min) + 1;

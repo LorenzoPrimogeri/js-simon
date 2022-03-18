@@ -10,6 +10,9 @@
     flex-wrap: nowrap;
     justify-content: space-between;
 }
+.no-pointer{
+    pointer-events: none;
+}
 .cell{
     display: flex;
     justify-content: center;
