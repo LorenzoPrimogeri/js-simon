@@ -1,0 +1,27 @@
+#Grid{
+    text-align: center;
+    width: 500px;
+    height: 500px;
+    margin:50px auto;
+    background-color: rgb(128, 139, 139);
+}
+#NumberContainer{
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+}
+.cell{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 25%;
+    border: 1px solid white;
+    height: 50px;
+}
+#Generatore{
+    padding: 10px;
+    margin: 10px;
+}
+body{
+    background-color: rgb(43, 40, 40);
+}
