@@ -16,6 +16,10 @@ function start() {
     arrayNumeri = generaArrayNumeri(5);
     console.log(arrayNumeri);
     stampaNumeri(arrayNumeri, numeroNumeri);
+    setTimeout(clearNumber, 10000);
+    setTimeout(askNumber, 1000);
+    let clock = setInterval(askNumber(arrayNumeri), 11000);
+    clearInterval(clock);
 
 }
 function generateRandomNumber(min, max) {
@@ -40,9 +44,7 @@ function stampaNumeri(arrayNumeri, ripetizione) {
         numero.id = "cell-" + (i + 1);
         container.appendChild(numero);
     }
-    setTimeout(clearNumber, 10000);
-    let clock = setInterval(askNumber(arrayNumeri), 11000);
-    clearInterval(clock);
+
 };
 function askNumber(arrayNumeri) {
     let i = 0;
