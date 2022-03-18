@@ -18,8 +18,6 @@ function start() {
     stampaNumeri(arrayNumeri, numeroNumeri);
 
 }
-
-
 function generateRandomNumber(min, max) {
     const range = (max - min) + 1;
     return Math.floor(Math.random() * range + min);
@@ -39,7 +37,36 @@ function stampaNumeri(arrayNumeri, ripetizione) {
         const numero = document.createElement("div");
         numero.innerText = arrayNumeri[i];
         numero.classList.add("cell");
+        numero.id = "cell-" + (i + 1);
         container.appendChild(numero);
     }
-
+    setTimeout(clearNumber, 10000);
+    let clock = setInterval(askNumber(arrayNumeri), 11000);
+    clearInterval(clock);
 };
+function askNumber(arrayNumeri) {
+    let i = 0;
+    while (i < 6) {
+        let numero = 0;
+        do {
+            numero = parseInt(prompt("inserisci il " + (i + 1) + " numero: "));
+        } while (isNaN(numero));
+
+        if (arrayNumeri.includes(numero)) {
+            console.log("il numero da lei inserito(" + numero + ") è corretto")
+        }
+        else {
+            console.log("il numero da lei inserito(" + numero + ")non è corretto")
+        }
+        i++;
+    }
+}
+function clearNumber() {
+    console.log("SONO QUI DENTRO");
+    for (let i = 0; i < numeroNumeri; i++) {
+        let numeri = document.getElementById("cell-" + (i + 1));
+        console.log(numeri);
+        numeri.innerHTML = " ";
+    }
+
+}
