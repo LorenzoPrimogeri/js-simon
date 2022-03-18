@@ -8,19 +8,19 @@ let arrayNumeri = [];
 let numeroNumeri = 5;
 const genera = document.getElementById("Generatore");
 const container = document.getElementById("NumberContainer");
-
+const risultato = document.getElementById("Risultato");
+const NumeroUtente = document.getElementById("NumeriUtente");
 genera.addEventListener('click', () => start());
 
 function start() {
     container.innerHTML = " ";
+    risultato.innerText = " ";
+    NumeroUtente.innerText = " ";
     arrayNumeri = generaArrayNumeri(5);
     console.log(arrayNumeri);
     stampaNumeri(arrayNumeri, numeroNumeri);
-    setTimeout(clearNumber, 10000);
-    setTimeout(askNumber, 1000);
-    let clock = setInterval(askNumber(arrayNumeri), 11000);
-    clearInterval(clock);
-
+    setTimeout(clearNumber, 5000);
+    setTimeout(askNumber, 5000, arrayNumeri);
 }
 function generateRandomNumber(min, max) {
     const range = (max - min) + 1;
@@ -48,27 +48,32 @@ function stampaNumeri(arrayNumeri, ripetizione) {
 };
 function askNumber(arrayNumeri) {
     let i = 0;
+    let numeriAzzeccati = [];
     while (i < numeroNumeri) {
         let numero = 0;
+
         do {
             numero = parseInt(prompt("inserisci il " + (i + 1) + " numero: "));
         } while (isNaN(numero));
 
         if (arrayNumeri.includes(numero)) {
-            console.log("il numero da lei inserito(" + numero + ") è corretto")
-        }
-        else {
-            console.log("il numero da lei inserito(" + numero + ")non è corretto")
+            if (!numeriAzzeccati.includes(numero)) {
+                numeriAzzeccati.push(numero);
+            }
+            console.log(numeriAzzeccati);
         }
         i++;
     }
+    verifica(numeriAzzeccati);
+}
+function verifica(numeriAzzeccati) {
+    risultato.innerText += "il tuo punteggio è:" + numeriAzzeccati.length;
+    NumeroUtente.innerText = "i numeri azzeccati sono" + numeriAzzeccati;;
 }
 function clearNumber() {
-    console.log("SONO QUI DENTRO");
     for (let i = 0; i < numeroNumeri; i++) {
         let numeri = document.getElementById("cell-" + (i + 1));
         console.log(numeri);
         numeri.innerHTML = " ";
     }
-
 }
