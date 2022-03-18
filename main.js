@@ -20,7 +20,7 @@ function start() {
     console.log(arrayNumeri);
     stampaNumeri(arrayNumeri, numeroNumeri);
     setTimeout(clearNumber, 5000);
-    setTimeout(askNumber, 5000, arrayNumeri);
+    setTimeout(askNumber, 6000, arrayNumeri);
 }
 function generateRandomNumber(min, max) {
     const range = (max - min) + 1;
