@@ -64,9 +64,9 @@ function askNumber(arrayNumeri) {
         }
         i++;
     }
-    verifica(numeriAzzeccati);
+    verificaNumeri(numeriAzzeccati);
 }
-function verifica(numeriAzzeccati) {
+function verificaNumeri(numeriAzzeccati) {
     risultato.innerText += "il tuo punteggio è:" + numeriAzzeccati.length;
     NumeroUtente.innerText = "i numeri azzeccati sono" + numeriAzzeccati;;
 }
