@@ -46,7 +46,7 @@ function stampaNumeri(arrayNumeri, ripetizione) {
 };
 function askNumber(arrayNumeri) {
     let i = 0;
-    while (i < 6) {
+    while (i < numeroNumeri) {
         let numero = 0;
         do {
             numero = parseInt(prompt("inserisci il " + (i + 1) + " numero: "));
